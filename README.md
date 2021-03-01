@@ -5,10 +5,10 @@ Golang 屏幕进度条打印
 使用：`go get -u github.com/redmask-hb/GoSimplePrint/goPrint`
 
 例子：
-
+P
 ```
 func main()  {
-	bar:=goprint.NewBar(20)
+	bar:=goPrint.NewBar(20)
 	bar.SetNotice("进度条：")
 	bar.SetGraph(">")
 	for i:=1;i<=20;i++  {
@@ -29,10 +29,10 @@ Finish!
 GoPrint是用golang写的一个简单进度条打印功能包。你只需要简单传入当前值和总值就可以实现进度条功能。颜色，样式，进度图块，等，可以自己根据需要定义，不需要的组成部分可以随意隐藏。
 
 1. 初始化
-
+P
 
 ```
-bar:=goprint.NewBar(totalValue)  //totalValue是进度最后的终止值
+bar:=goPrint.NewBar(totalValue)  //totalValue是进度最后的终止值
 ```
 
 2、打印
