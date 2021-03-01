@@ -1,5 +1,6 @@
 # GoSimplePrint
 A simple terminal progress bar printing with golang.
+Golang 屏幕进度条打印
 
 使用：`go get -u github.com/redmask-hb/GoSimplePrint/goPrint`
 
