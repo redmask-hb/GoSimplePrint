@@ -1,4 +1,4 @@
-package goprint
+package GoSimplePrint
 
 import (
 	"fmt"

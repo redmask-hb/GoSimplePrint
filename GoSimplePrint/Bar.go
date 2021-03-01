@@ -1,4 +1,4 @@
-package goprint
+package GoSimplePrint
 
 const DefaultCount = 50
 
