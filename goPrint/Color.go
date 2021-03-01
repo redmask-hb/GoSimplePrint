@@ -1,4 +1,4 @@
-package GoSimplePrint
+package goPrint
 
 type BarColor struct {
 	Graph int
