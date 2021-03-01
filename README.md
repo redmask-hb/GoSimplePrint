@@ -56,7 +56,7 @@ bar.PrintEnd(tip) //tip为可选参数
 
 ```
 bar.SetGraph(graph string)  //设置进度条图块，默认"█"
-bar.SetNotice(notice string) //设置今天前的提示内容，可选
+bar.SetNotice(notice string) //设置进度条前的提示内容，可选
 bar.SetProgressGraphTotal(totalGraph int) //设置进度条完成所填图块的总数，默认：50
 bar.SetEnds(start,end string)  //设置进度条端块，默认为 srart:"[",end:"]"
 bar.SetBackGraph(graph string) //设置背面被进度条替换的图形，默认" "
