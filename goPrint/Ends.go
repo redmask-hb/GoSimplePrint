@@ -7,5 +7,5 @@ type Ends struct {
 
 func (m *Bar)SetEnds(start,end string)  {
 	ends:=Ends{Start:start,End:end}
-	m.ProgressEnds=ends
+	m.progressEnds=ends
 }

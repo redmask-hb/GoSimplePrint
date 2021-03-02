@@ -1,77 +1,77 @@
 package goPrint
 
-const DefaultCount = 50
+const defaultCount = 50
 
 type Bar struct {
-	TotalValue         int
-	CurrentValue       int
-	CurrentRate        int
-	ProgressGraph      string
-	ProgressGraphTotal int
-	BackGraph          string
-	IsShowPercent      bool
-	IsShowRatio        bool
-	IsShowBar          bool
-	Notice             string
-	ProgressEnds       Ends
-	Color              BarColor
+	totalValue         int
+	currentValue       int
+	currentRate        int
+	progressGraph      string
+	progressGraphTotal int
+	backGraph          string
+	isShowPercent      bool
+	isShowRatio        bool
+	isShowBar          bool
+	notice             string
+	progressEnds       Ends
+	color              BarColor
 }
 
 func NewBar(totalVale int) *Bar {
 	res := &Bar{
-		TotalValue:         totalVale,
-		CurrentValue:       0,
-		ProgressGraphTotal: DefaultCount,
-		ProgressGraph:      "█",
-		BackGraph:          " ",
-		ProgressEnds:       Ends{Start: "[", End: "]"},
-		IsShowPercent:      true,
-		IsShowRatio:        true,
-		IsShowBar:          true,
+		totalValue:         totalVale,
+		currentValue:       0,
+		progressGraphTotal: defaultCount,
+		progressGraph:      "█",
+		backGraph:          " ",
+		progressEnds:       Ends{Start: "[", End: "]"},
+		isShowPercent:      true,
+		isShowRatio:        true,
+		isShowBar:          true,
 	}
 	res.CountCurrentRate()
 	return res
 }
 
 func (m *Bar) CountCurrentRate() {
-	if m.CurrentValue == 0 {
-		m.CurrentRate = 0
+	if m.currentValue == 0 {
+		m.currentRate = 0
 	} else {
-		m.CurrentRate = m.CurrentValue * 100 / m.TotalValue
+		m.currentRate = m.currentValue * 100 / m.totalValue
 	}
 }
 
 func (m *Bar)SetGraph(graph string)  {
-	m.ProgressGraph=graph
+	m.progressGraph=graph
 }
 
 func (m *Bar) SetCurrentValue(value int) {
-	m.CurrentValue = value
+	m.currentValue = value
 	m.CountCurrentRate()
 }
 
 func (m *Bar) CurrentPrintGraphNumber() int {
-	if m.CurrentRate == 100 {
-		return m.ProgressGraphTotal
+	if m.currentRate == 100 {
+		return m.progressGraphTotal
 	} else {
-		return int(float64(m.CurrentRate) * (float64(m.ProgressGraphTotal) / float64(100)))
+		return int(float64(m.currentRate) * (float64(m.progressGraphTotal) / float64(100)))
 	}
 }
 
 func (m *Bar) HideProgressBar() {
-	m.IsShowBar = false
+	m.isShowBar = false
 }
 
 func (m *Bar) HidePercent() {
-	m.IsShowPercent = false
+	m.isShowPercent = false
 }
 
 func (m *Bar) HideRatio() {
-	m.IsShowRatio = false
+	m.isShowRatio = false
 }
 
 func (m *Bar) SetNotice(notice string) {
-	m.Notice = notice
+	m.notice = notice
 }
 
 func (m *Bar)SetProgressGraphTotal(totalGraph int)  {
@@ -79,5 +79,5 @@ func (m *Bar)SetProgressGraphTotal(totalGraph int)  {
 }
 
 func (m *Bar)SetBackGraph(graph string)  {
-	m.BackGraph=graph
+	m.backGraph=graph
 }
