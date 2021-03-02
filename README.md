@@ -69,8 +69,7 @@ bar.HidePercent()   //隐藏百分比
 bar.HideRatio()    //隐藏比值
 ```
 
-（3）颜色设置
-
+（3）颜色设置 （由于windows的cmd颜色打印，需要调用系统API，目前win操作系统下颜色设置无效）
 ```
 bar.SetColor(color BarColor) //配置所有的颜色选项
 bar.SetBackColor(color int) //设置进度条背景色
@@ -80,6 +79,7 @@ bar.SetNoticeColor(color int) //设置提示颜色
 ```
 
 颜色为int数据类型，对比下表配置（配置背景色用背景色值，前景色用前景色值）
+
 
 | 前景色 | 背景色 | 颜色  |
 |-----|-----|-----|
@@ -91,4 +91,15 @@ bar.SetNoticeColor(color int) //设置提示颜色
 | 35  | 45  | 紫红色 |
 | 36  | 46  | 青蓝色 |
 | 37  | 47  | 白色  |
+
+
+改动：
+v1.1.0
+1、修正了背景颜色设置无效的BUG。
+2、增加了颜色预置定义 
+```
+bar.SetNoticeColor(goPrint.FontColor.Yellow)
+bar.SetBackColor(goPrint.BackColor.Red)
+```
+3、修正了win打印错位的问题。
 
