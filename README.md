@@ -94,9 +94,13 @@ bar.SetNoticeColor(color int) //设置提示颜色
 
 
 改动：
+
 v1.1.0
+
 1、修正了背景颜色设置无效的BUG。
+
 2、增加了颜色预置定义 
+
 ```
 bar.SetNoticeColor(goPrint.FontColor.Yellow)
 bar.SetBackColor(goPrint.BackColor.Red)
